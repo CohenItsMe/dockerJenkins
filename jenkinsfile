@@ -11,10 +11,10 @@ pipline{
         }
         stage('python') {
             agent{
-                docker {image 'note:16.13.1-alpine'}
+                docker {image 'python'}
             }
             steps {
-                sh 'node --version'
+                sh 'python3 --version'
             }
         }
     }
