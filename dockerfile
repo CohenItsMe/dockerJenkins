@@ -1,4 +1,4 @@
 FROM python
 WORKDIR /app
 COPY . .
-CMD [ "python" ,"holdthecontainer.py"]
+CMD ["python" ,"holdthecontainer.py"]
