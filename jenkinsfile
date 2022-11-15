@@ -1,6 +1,14 @@
 pipeline {
     agent any
     stages {
+        stage('python') {
+            agent{
+                docker {image 'orc601/targilclass:2'}
+            }
+            steps {
+                sh 'python /app/hello.py'
+            }
+        }
         stage('node') {
             agent{
                 docker {image 'node:16.13.1-alpine'}
@@ -9,10 +17,6 @@ pipeline {
                 sh 'node --version'
             }
         }
-        stage('python') {
-            steps {
-                sh 'python --version'
-            }
-        }
     }
 }
+
